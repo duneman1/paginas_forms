@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./app.js"></script>
     <title>Formularios</title>
 </head>
 
@@ -15,7 +18,8 @@
         <h1>Formularios</h1>
     </header>
     <section>
-        <form action="">
+        <form id="form_ingresos" action="">
+            <input type="hidden" name="type" value="form_ingresos">
             <fieldset>
                 <legend>Datos Personales</legend>
                 <div class="control_group">
@@ -30,7 +34,14 @@
                 </div>
                 <div class="control_group">
                     <label for="pais">Pais</label>
-                    <input type="text" value="ES" maxlength="2" name="pais" id="pais" placeholder="Tu codigo de pais">
+                    <!-- <input type="text" value="ES" maxlength="2" name="pais" id="pais" placeholder="Tu codigo de pais"> -->
+                    <input type="text" name="pais" id="pais" maxlength="2" list="paises-list">
+                    <datalist id="paises-list">
+                        <option>ES</option>
+                        <option>FR</option>
+                        <option>GE</option>
+                        <option>UK</option>
+                    </datalist>
                 </div>
                 <div class="control_group">
                     <label for="passw">Contraseña</label>
@@ -42,7 +53,7 @@
                     Perfil
                 </legend>
                 <div class="control_group">
-                    <label for="nombre">correo</label>
+                    <label for="correo">Correo</label>
                     <input type="email" name="correo" id="correo">
                 </div>
                 <div class="control_group">
@@ -57,15 +68,95 @@
                     <label for="search">Busqueda</label>
                     <input type="search" name="search" id="search">
                 </div>
+                <div class="control_group">
+                    <label for="cv">Subir Curriculum</label>
+                    <input type="file" accept="text" name="cv" id="cv">
+                </div>
 
             </fieldset>
             <fieldset>
                 <legend>Información Extra</legend>
-                <textarea name="info" id="info" cols="30" rows="10"></textarea>
+                <div class="textarea_group">
+                    <textarea name="info" id="info"></textarea>
+                </div>
             </fieldset>
+            <fieldset>
+                <div class="check_group">
+                    <label for="accepted">Leidas y aceptadas las condiciones</label>
+                    <input type="checkbox" name="accepted" id="accepted" checked>
+                    <!-- la opcion checked hoy es ilegal -->
+                </div>
+                <div class="check_group">
+                    <label for="cookies">Acepto cookies</label>
+                    <input type="checkbox" name="cookies" id="cookies" checked>
+                    <!-- la opcion checked hoy es ilegal -->
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Curso</legend>
+                <select name="curso" id="curso" size="8" multiple>
+                    <optgroup label="Cursos">
+                        <option value="web" select>Paginas Web</option>
+                        <!-- select marca por defecto aunque no se haya selecionado -->
+                        <option value="php">Programación PHP</option>
+                        <option value="java">Java</option>
+                    </optgroup>
+                    <optgroup label="Sistemas">
+                        <option value="sisweb">Servidores Web</option>
+                        <option value="win">Servidores Windows</option>
+                        <option value="linux">Servidores Linux</option>
+                    </optgroup>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Turno</legend>
+                <input type="radio" name="turno" id="manana" value="manaña">
+                <label for="manana">Mañana</label>
+                <input type="radio" name="turno" id="tarde" value="tarde">
+                <label for="tarde">Tarde</label>
+            </fieldset>
+            <fieldset>
+                    <legend>Aficiones</legend>
+                    <label>
+                        <input type="checkbox" name="deporte" id="deporte">
+                        Deporte
+                    </label>
+                    <label>
+                        <input type="checkbox" name="musica" id="musica">
+                        Musica
+                    </label>
+                    <label>
+                        <input type="checkbox" name="lectura" id="lectura">
+                        Lectura
+                    </label>
+                    
+                </fieldset>
+            <fieldset>
+                <legend>Curiosidades</legend>
+                <label for="color">Elija un color</label>
+                <input type="color" name="color" id="color">
+                <label for="edad">Edad</label>
+                <input type="number" name="edad" id="edad" min="18" max="55">
+                <label for="hijos">Numero de hijos</label>
+                <input type="range" name="hijos" id="hijos" min="0" max="10" step="2"> <!-- step son etapas de corte salta de 2 en 2 -->
+                <label for="nacimiento">Fecha de nacimiento</label>
+                <input type="date" name="nacimiento" id="nacimiento">
+            </fieldset>
+            <fieldset>
+                <input type="reset" value="reset">
+                <input type="submit" value="send submit">
+                <input type="button" onclick="saludar()" value="button">
+                <button type="submit" title="Enviar">Enviar
+                    <i class="fas fa-share-square"></i>
+                </button>
+                <button type="button" onclick="saludar()" title="Saludar">Enviar button
+                    <i class="fas fa-hand-spock"></i>
+                </button>
+                <button type="reset" title="Borrar todo el contenido">reset button
+                    <i class="fas fa-eraser"></i>
+                </button>
 
-            <button type="submit">Enviar</button>
-
+            </fieldset>
         </form>
     </section>
 </body>
