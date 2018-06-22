@@ -31,3 +31,13 @@ textarea {
     margin-bottom: 0.3rem;
 
 }
+
+*:required {
+    /* box-shadow: 0.3rem 0.3rem 0.3rem 0.3rem gray; */
+    border: 1px solid red;
+    color: crimson;
+}
+
+input[type="checkbox"] {
+    color: green;
+}
