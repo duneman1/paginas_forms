@@ -1,17 +1,15 @@
 * {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 nav ul {
-  list-style: none;
-}
+  list-style: none; }
+
 nav a {
   text-decoration: none;
-  color: inherit;
-}
+  color: inherit; }
 
 body {
-  background-color: bisque;
-}
+  background-color: bisque; }
 
-/*# sourceMappingURL=dist/css/style.css.map */
+nav {
+  display: flex; }

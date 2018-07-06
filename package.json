@@ -1,14 +1,14 @@
 {
   "name": "paginas_web_forms",
   "version": "1.0.0",
-  "description": "",
+  "description": "forms",
   "main": "index.js",
   "scripts": {
     "start": "parallelshell \"npm run server\" \"npm run pug\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "pug": "pug -w -P -O ./06_pug/config.json ./06_Pug/src -o ./06_Pug/dist",
     "server": "http-server"
-},
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/duneman1/paginas_web_forms.git"
@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/duneman1/paginas_web_forms#readme",
   "dependencies": {
-    "bootstrap": "^4.1.1"
+    "bootstrap": "^4.1.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.3"
   },
   "devDependencies": {
     "pug": "^2.0.3",

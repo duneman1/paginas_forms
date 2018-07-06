@@ -4,13 +4,15 @@
   "description": "Ejercicio de CSS. unidad 3 del módulo 1",
   "main": "index.js",
   "scripts": {
-    "start": "parallelshell \"npm run srv\" \"npm run pug:w\" \"npm run sass:watch \"",
+    "start:parcial": "parallelshell \"npm run srv\" \"npm run pug:w\" \"npm run sass:watch\"",
+    "start": "parallelshell \"npm run srv\"  \"npm run sass:w\" \"npm run pug:w\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "pug": "pug -P -O ./config.json -p ./src/partials ./src/pug -o ./dist",
     "pug:w": "pug -w -P -O ./config.json -p ./src/partials ./src/pug -o ./dist",
     "srv": "http-server",
     "sass": "sass src/sass:dist/css",
-    "sass:watch": "nodemon -e src/sass -x \"npm run sass\""
+    "sass:watch": "nodemon -e scss -x \"npm run sass\"",
+    "sass:w" : "node-sass --watch src/sass -o dist/css"
   },
   "repository": {
     "type": "git",
